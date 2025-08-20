@@ -89,7 +89,7 @@ with st.sidebar:
     st.image(logo_path, use_column_width=True)
     st.markdown("### Data Filters")
 
-    time_scale = st.radio("Select Time Scale", ["Annual", "Daily"])
+    time_scale = st.radio("Select Time Scale", ["annual", "daily"])
     data_path = os.path.join(data_base_dir, time_scale)
     if not os.path.isdir(data_path):
         st.error(f"Data folder not found: `{data_path}`"); st.stop()
@@ -330,3 +330,4 @@ with col_right:
         )
         st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
         st.markdown('</div>', unsafe_allow_html=True)
+
